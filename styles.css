@@ -54,8 +54,8 @@
 
 /* Use the actual uploaded BEST TRIP brand asset */
 .brand{min-width:205px;flex:0 0 auto;display:flex;align-items:center;color:#fff}
-.brand img{display:block;width:218px;height:auto;max-height:64px;object-fit:contain;object-position:left center}
+.brand img{display:block;width:218px;height:auto;max-height:64px;object-fit:contain;object-position:left center;}
 .footer-brand{min-width:0}
-.footer-brand img{width:190px;max-height:58px}
-@media(max-width:820px){.brand{min-width:0}.brand img{width:190px;max-height:56px}}
-@media(max-width:560px){.brand img{width:165px;max-height:49px}.footer-brand img{width:175px;max-height:52px}}
+.footer-brand img{width:190px;max-height:58px;}
+@media(max-width:820px){.brand{min-width:0}.brand img{display:block;width:218px;height:auto;max-height:64px;object-fit:contain;object-position:left center;}}
+@media(max-width:560px){.brand img{display:block;width:218px;height:auto;max-height:64px;object-fit:contain;object-position:left center;}.footer-brand img{width:190px;max-height:58px;}}
