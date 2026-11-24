@@ -48,3 +48,24 @@
   .booking-form .field{width:100%;min-width:0}
   .mobile-call{bottom:max(12px,env(safe-area-inset-bottom))}
 }
+
+
+/* BEST TRIP brand mark + cinematic page loader */
+.brand{min-width:0;flex:0 0 auto}
+.brand img{display:block;width:218px;height:auto;max-height:64px;object-fit:contain;object-position:left center}
+.site-loader{position:fixed;inset:0;z-index:3000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;padding:28px;background:radial-gradient(ellipse at 50% 43%,rgba(233,184,79,.11),transparent 36%),#080a0c;opacity:1;visibility:visible;transition:opacity .65s ease,visibility .65s ease}
+.site-loader.is-hidden{opacity:0;visibility:hidden;pointer-events:none}
+.loader-logo{position:relative;z-index:1;width:min(78vw,430px);height:auto;filter:drop-shadow(0 12px 30px rgba(0,0,0,.48));animation:loader-arrive 1.05s cubic-bezier(.2,.75,.25,1) both}
+.loader-aura{position:absolute;width:min(75vw,420px);aspect-ratio:1;border:1px solid rgba(233,184,79,.16);border-radius:50%;box-shadow:0 0 80px rgba(233,184,79,.08),inset 0 0 70px rgba(233,184,79,.04);animation:loader-orbit 5s linear infinite}
+.loader-aura:before,.loader-aura:after{content:"";position:absolute;inset:12%;border:1px solid rgba(233,184,79,.11);border-radius:50%;transform:rotateX(68deg)}
+.loader-aura:after{inset:23%;transform:rotateY(68deg)}
+.loader-route{position:relative;width:min(54vw,230px);height:3px;overflow:hidden;border-radius:9px;background:rgba(255,255,255,.12)}
+.loader-route span{position:absolute;inset:0 auto 0 -45%;width:42%;border-radius:9px;background:linear-gradient(90deg,transparent,#e9b84f,#fff0bf,transparent);box-shadow:0 0 16px rgba(233,184,79,.8);animation:loader-travel 1.35s ease-in-out infinite}
+.site-loader p{margin:0;color:#e7e2d7;font-size:10px;font-weight:800;letter-spacing:.27em;text-align:center}
+.site-loader small{color:#858b8d;font-size:9px;letter-spacing:.24em}
+.site-loader small i{font-style:normal;color:var(--gold)}
+@keyframes loader-arrive{0%{opacity:0;transform:translateY(18px) scale(.94);filter:blur(8px)}100%{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}}
+@keyframes loader-orbit{to{transform:rotate(360deg)}}
+@keyframes loader-travel{0%{transform:translateX(0)}100%{transform:translateX(360%)}}
+@media(max-width:700px){.brand img{width:174px;max-height:52px}.site-loader{gap:19px}.loader-logo{width:min(84vw,380px)}.loader-aura{width:min(78vw,360px)}.site-loader p{font-size:9px;letter-spacing:.2em}}
+@media(prefers-reduced-motion:reduce){.loader-logo,.loader-aura,.loader-route span{animation:none}.site-loader{transition:none}}
