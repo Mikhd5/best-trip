@@ -98,6 +98,25 @@
     });
   }
 
+
+  const mobileCall = $('.mobile-call');
+  const bookingSection = $('#booking');
+  if (mobileCall && bookingSection && 'IntersectionObserver' in window) {
+    const bookingObserver = new IntersectionObserver(entries => {
+      const visible = entries.some(entry => entry.isIntersecting);
+      mobileCall.classList.toggle('is-hidden', visible);
+    }, { threshold: 0.08 });
+    bookingObserver.observe(bookingSection);
+  }
+  if (mobileCall) {
+    $('#bookingForm input, #bookingForm select, #bookingForm textarea').forEach(field => {
+      field.addEventListener('focus', () => mobileCall.classList.add('is-hidden'));
+      field.addEventListener('blur', () => {
+        if (!bookingSection || !('IntersectionObserver' in window)) mobileCall.classList.remove('is-hidden');
+      });
+    });
+  }
+
   const year = $('#year');
   if (year) year.textContent = new Date().getFullYear();
 })();
