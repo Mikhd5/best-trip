@@ -6,6 +6,28 @@
   const $ = (selector, root = document) => root.querySelector(selector);
   const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
 
+  const loader = $('#siteLoader');
+  if (loader) {
+    let loaderDismissed = false;
+    const dismissLoader = () => {
+      if (loaderDismissed) return;
+      loaderDismissed = true;
+      window.setTimeout(() => {
+        loader.classList.add('is-hidden');
+        window.setTimeout(() => loader.remove(), 750);
+      }, 550);
+    };
+    if (document.readyState === 'complete') dismissLoader();
+    else window.addEventListener('load', dismissLoader, { once: true });
+    window.setTimeout(dismissLoader, 4200);
+    window.addEventListener('pageshow', event => {
+      if (event.persisted) {
+        loader.classList.add('is-hidden');
+        loader.remove();
+      }
+    });
+  }
+
   const menuToggle = $('#menuToggle');
   const mainNav = $('#mainNav');
   if (menuToggle && mainNav) {
