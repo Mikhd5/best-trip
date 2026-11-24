@@ -12,15 +12,17 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="site-loader" id="siteLoader" role="status" aria-live="polite" aria-label="Завантаження BEST TRIP">
+    <div class="loader-aura"></div>
+    <img class="loader-logo" src="best-trip-logo.svg" alt="BEST TRIP">
+    <div class="loader-route" aria-hidden="true"><span></span></div>
+    <p>ГОТУЄМО ВАШУ ПОДОРОЖ</p>
+    <small>UKRAINE <i>↗</i> EUROPE</small>
+  </div>
   <div class="scroll-progress" aria-hidden="true"><span id="scrollProgress"></span></div>
   <header class="site-header" id="top">
     <div class="nav-wrap container">
-      <a class="brand" href="#top" aria-label="BEST TRIP — на головну">
-        <span class="brand-mark" aria-hidden="true">
-          <svg viewBox="0 0 58 36" fill="none"><path d="M5 27C17 8 34 3 53 8C40 8 29 15 21 26C31 20 42 18 54 20C38 20 25 25 14 32" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M23 23L29 15L38 14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
-        </span>
-        <span class="brand-copy"><strong>BEST <em>TRIP</em></strong><small>ПАСАЖИРСЬКІ ПЕРЕВЕЗЕННЯ</small></span>
-      </a>
+      <a class="brand" href="#top" aria-label="BEST TRIP — на головну"><img src="best-trip-logo.svg" alt="BEST TRIP — пасажирські перевезення" width="250" height="72"></a>
       <button class="menu-toggle" id="menuToggle" aria-label="Відкрити меню" aria-expanded="false"><span></span><span></span></button>
       <nav class="main-nav" id="mainNav" aria-label="Головна навігація">
         <a href="#about">Про нас</a>
